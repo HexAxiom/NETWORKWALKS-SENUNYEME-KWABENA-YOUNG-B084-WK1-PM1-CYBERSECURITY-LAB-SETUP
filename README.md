@@ -1,9 +1,26 @@
 # NETWORKWALKS CYBERSECURITY INTERNSHIP 2026
 
-## Week 1 – Project Module 1: Lab Setup with VirtualBox and Kali Linux
+**Building an isolated virtual lab for penetration testing and ethical hacking practice**
+
+![Cybersecurity](https://img.shields.io/badge/Skill-Cybersecurity-red)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-7.2.22-blue?logo=virtualbox)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-2026.3-557C94?logo=kalilinux\&logoColor=white)
+![Linux](https://img.shields.io/badge/Skill-Linux-black?logo=linux)
+![Network](https://img.shields.io/badge/Network-10.0.0.0%2F24-green)
+![Virtualization](https://img.shields.io/badge/Skill-Virtualization-blue)
+![Penetration Testing](https://img.shields.io/badge/Penetration-Testing-orange)
+![Ethical Hacking](https://img.shields.io/badge/Ethical-Hacking-red)
+![NetworkWalks](https://img.shields.io/badge/NetworkWalks-Cybersecurity_Internship-blue)
+![GitHub](https://img.shields.io/badge/Platform-GitHub-black?logo=github)
+![Project](https://img.shields.io/badge/Project-WK1--PM1-informational)
+![Participant](https://img.shields.io/badge/Participant-Senunyeme_Kwabena_Young-success)
+
+---
+
+## Project Information
 
 | Project Information     | Details                                    |
-| ----------------------- | ------------------------------------------ |
+| :---------------------- | :----------------------------------------- |
 | Participant Name        | SENUNYEME KWABENA YOUNG                    |
 | Programme               | NetworkWalks Cybersecurity Internship 2026 |
 | Batch                   | B084                                       |
@@ -32,13 +49,13 @@ The main objectives were to:
 * Configure Kali Linux with the required static IP address.
 * Enable clipboard sharing and file drag-and-drop.
 * Configure a shared folder between the host operating system and Kali Linux.
-* Establish and verify full internet connectivity.
+* Establish and verify internet connectivity.
 * Create a VirtualBox snapshot after completing the initial setup.
 
 ## 3. Tools and Technologies Used
 
 | Tool / Technology        | Purpose                                           |
-| ------------------------ | ------------------------------------------------- |
+| :----------------------- | :------------------------------------------------ |
 | Oracle VirtualBox 7.2.22 | Virtualization platform                           |
 | Kali Linux 2026.3        | Attacking and security testing machine            |
 | 7-Zip                    | Extracting the Kali Linux virtual machine archive |
@@ -52,44 +69,44 @@ The laboratory was configured using a VirtualBox NAT Network.
 
 ### Network Configuration
 
-| Configuration         | Value         |
-| --------------------- | ------------- |
-| Network Type          | NAT Network   |
-| Network Name          | NatNetwork    |
-| Network Subnet        | 10.0.0.0/24   |
-| DHCP                  | Enabled       |
-| Kali Linux IP Address | 10.0.0.2/24   |
-| Subnet Mask           | 255.255.255.0 |
-| Default Gateway       | 10.0.0.1      |
-| DNS Server            | 8.8.8.8       |
+| Configuration         | Value           |
+| :-------------------- | :-------------- |
+| Network Type          | NAT Network     |
+| Network Name          | `NatNetwork`    |
+| Network Subnet        | `10.0.0.0/24`   |
+| DHCP                  | Enabled         |
+| Kali Linux IP Address | `10.0.0.2/24`   |
+| Subnet Mask           | `255.255.255.0` |
+| Default Gateway       | `10.0.0.1`      |
+| DNS Server            | `8.8.8.8`       |
 
 ### Virtual Machine Network Settings
 
 The Kali Linux virtual machine was configured with:
 
-* Network Adapter: Enabled
-* Attached to: NAT Network
-* Network Name: NatNetwork
-* Promiscuous Mode: Allow All
-* Cable Connected: Enabled
+* **Network Adapter:** Enabled
+* **Attached to:** NAT Network
+* **Network Name:** `NatNetwork`
+* **Promiscuous Mode:** Allow All
+* **Cable Connected:** Enabled
 
 ### Virtual Machine Integration Settings
 
 The following integration settings were enabled:
 
-* Shared Clipboard: Bidirectional
-* Drag'n'Drop: Bidirectional
+* **Shared Clipboard:** Bidirectional
+* **Drag'n'Drop:** Bidirectional
 
 ### Shared Folder Configuration
 
 A shared folder was configured to allow file sharing between the Windows host and Kali Linux.
 
-| Setting     | Configuration              |
-| ----------- | -------------------------- |
-| Folder Name | downloads                  |
-| Host Folder | NetworkWalks-Lab/downloads |
-| Auto-mount  | Enabled                    |
-| Read-only   | Disabled                   |
+| Setting     | Configuration                |
+| :---------- | :--------------------------- |
+| Folder Name | `downloads`                  |
+| Host Folder | `NetworkWalks-Lab/downloads` |
+| Auto-mount  | Enabled                      |
+| Read-only   | Disabled                     |
 
 The shared folder was successfully mounted and appeared in the Kali Linux desktop environment.
 
@@ -121,10 +138,10 @@ Downloaded the Kali Linux 2026.3 prebuilt VirtualBox image, extracted the archiv
 
 Configured the Kali Linux network interface with the required static IPv4 settings:
 
-* IP Address: `10.0.0.2`
-* Netmask: `255.255.255.0`
-* Gateway: `10.0.0.1`
-* DNS: `8.8.8.8`
+* **IP Address:** `10.0.0.2`
+* **Netmask:** `255.255.255.0`
+* **Gateway:** `10.0.0.1`
+* **DNS:** `8.8.8.8`
 
 ### Step 6: Configure Virtual Machine Integration
 
@@ -186,15 +203,21 @@ During the initial network configuration, the Kali Linux network connection did 
 
 ### Solution
 
-Following the troubleshooting instructions in the project guide, I used the following commands to modify and restart the NetworkManager connection:
+Following the troubleshooting instructions in the project guide, I used the following commands to modify and restart the NetworkManager connection.
+
+**1. Modify the connection settings:**
 
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
 ```
 
+**2. Disconnect the network connection:**
+
 ```bash
 sudo nmcli connection down "Wired connection 1"
 ```
+
+**3. Reactivate the network connection:**
 
 ```bash
 sudo nmcli connection up "Wired connection 1"
